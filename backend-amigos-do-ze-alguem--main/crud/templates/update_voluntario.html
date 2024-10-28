@@ -20,16 +20,18 @@
               {% csrf_token %}
               <div class="form-group">
                 <label for="nome">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Preencha com Nome" required>
+                <input type="text" class="form-control" id="nome" name="nome" 
+                       value="{{ voluntario.nome }}" placeholder="Preencha com Nome" required>
               </div>
               <div class="form-group">
                 <label for="cpf">CPF</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX" required>
+                <input type="text" class="form-control" id="cpf" name="cpf" 
+                       value="{{ voluntario.cpf }}" placeholder="XXX.XXX.XXX-XX" required>
               </div>
               <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="text" class="form-control" id="telefone" name="telefone"
-                  placeholder="Preencha com Telefone">
+                <input type="text" class="form-control" id="telefone" name="telefone" 
+                       value="{{ voluntario.telefone }}" placeholder="Preencha com Telefone">
               </div>
               <button type="submit" class="btn btn-primary btn-block">Atualizar</button>
               <div class="text-center mt-2">
