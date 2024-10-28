@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Beneficiário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    {% include 'topbar.html' %}
+    <div class="container mt-3">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Cadastro de Beneficiário</h5>
+                        <form method="POST" action="{% url 'salvar_beneficiario' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                    placeholder="Preencha com Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apelido">Apelido</label>
+                                <input type="text" class="form-control" id="apelido" name="apelido"
+                                    placeholder="Preencha com Apelido">
+                            </div>
+                            <div class="form-group">
+                                <label for="documento">Documento</label>
+                                <input type="text" class="form-control" id="documento" name="documento"
+                                    placeholder="Preencha com Documento" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endereco">Endereço</label>
+                                <input type="text" class="form-control" id="endereco" name="endereco"
+                                    placeholder="Preencha com Endereço">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" class="form-control" id="telefone" name="telefone"
+                                    placeholder="Preencha com Telefone">
+                            </div>
+                            <div class="form-group">
+                                <label for="observacoes">Observações</label>
+                                <textarea class="form-control" id="observacoes" name="observacoes" rows="3"
+                                    placeholder="Digite aqui..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                            <div class="text-center mt-2">
+                                <a href="{% url 'lista_beneficiarios' %}">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
